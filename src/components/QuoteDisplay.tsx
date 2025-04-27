@@ -1,8 +1,7 @@
-
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Sparkles } from 'lucide-react';
 
 const quotes = [
   {
@@ -27,7 +26,11 @@ const quotes = [
   }
 ];
 
-const QuoteDisplay = () => {
+interface QuoteDisplayProps {
+  userName: string;
+}
+
+const QuoteDisplay = ({ userName }: QuoteDisplayProps) => {
   const [currentQuote, setCurrentQuote] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -39,13 +42,11 @@ const QuoteDisplay = () => {
     }, 500);
   };
 
-  useEffect(() => {
-    const timer = setInterval(nextQuote, 10000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <Card className="w-full max-w-2xl p-8 backdrop-blur-sm bg-white/10 border-white/20">
+      <p className="text-white/90 mb-6">
+        Here's your daily inspiration, {userName} ✨
+      </p>
       <div className={`transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
         <blockquote className="text-2xl md:text-3xl font-light text-white mb-4 leading-relaxed">
           "{quotes[currentQuote].text}"
@@ -58,7 +59,7 @@ const QuoteDisplay = () => {
         onClick={nextQuote}
         className="mt-8 bg-white/20 hover:bg-white/30 text-white border-white/20"
       >
-        Next Quote
+        Next Quote <Sparkles className="ml-2" />
       </Button>
     </Card>
   );
