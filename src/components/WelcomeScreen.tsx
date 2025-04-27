@@ -20,10 +20,10 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
 
   return (
     <div className="animate-fade-in space-y-6 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-white">
+      <h2 className="text-3xl md:text-4xl font-bold text-purple-700">
         Welcome to Daily Inspiration ✨
       </h2>
-      <p className="text-xl text-white/90">
+      <p className="text-xl text-purple-600">
         Let's start your journey with motivation! 🌟
       </p>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -32,12 +32,12 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
           placeholder="Enter your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="max-w-xs mx-auto bg-white/10 text-white placeholder:text-white/50 border-white/20"
+          className="max-w-xs mx-auto bg-white/50 text-purple-700 placeholder:text-purple-400 border-purple-200 focus:border-purple-400"
         />
         <Button 
           type="submit"
           disabled={!name.trim()}
-          className="bg-white/20 hover:bg-white/30 text-white border-white/20"
+          className="bg-purple-600 hover:bg-purple-700 text-white border-purple-400"
         >
           Inspire Me <Sparkles className="ml-2" />
         </Button>

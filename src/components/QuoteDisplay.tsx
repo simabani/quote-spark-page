@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -43,21 +44,21 @@ const QuoteDisplay = ({ userName }: QuoteDisplayProps) => {
   };
 
   return (
-    <Card className="w-full max-w-2xl p-8 backdrop-blur-sm bg-white/10 border-white/20">
-      <p className="text-white/90 mb-6">
+    <Card className="w-full max-w-2xl p-8 bg-white/80 border-purple-200 shadow-lg">
+      <p className="text-purple-600 mb-6 font-medium">
         Here's your daily inspiration, {userName} ✨
       </p>
       <div className={`transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
-        <blockquote className="text-2xl md:text-3xl font-light text-white mb-4 leading-relaxed">
+        <blockquote className="text-2xl md:text-3xl font-light text-purple-800 mb-4 leading-relaxed">
           "{quotes[currentQuote].text}"
         </blockquote>
-        <cite className="block text-lg text-white/80 mt-4">
+        <cite className="block text-lg text-purple-600 mt-4">
           — {quotes[currentQuote].author}
         </cite>
       </div>
       <Button 
         onClick={nextQuote}
-        className="mt-8 bg-white/20 hover:bg-white/30 text-white border-white/20"
+        className="mt-8 bg-purple-600 hover:bg-purple-700 text-white"
       >
         Next Quote <Sparkles className="ml-2" />
       </Button>
