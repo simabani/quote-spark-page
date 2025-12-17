@@ -14,39 +14,70 @@ const HeartWithWings = ({ className }: { className?: string }) => (
     fill="none" 
     xmlns="http://www.w3.org/2000/svg"
   >
-    {/* Left wing */}
-    <path 
-      d="M45 40 C35 35, 20 30, 10 35 C5 38, 2 45, 8 50 C15 55, 30 52, 42 45"
-      stroke="#c4b5fd" 
-      strokeWidth="2.5" 
-      fill="#ede9fe"
-      strokeLinecap="round"
-    />
-    <path 
-      d="M42 42 C32 38, 22 36, 15 40 C12 42, 12 46, 18 48 C25 50, 35 47, 42 42"
-      stroke="#c4b5fd" 
-      strokeWidth="1.5" 
-      fill="#f5f3ff"
-      strokeLinecap="round"
-    />
+    <style>
+      {`
+        @keyframes leftWingFloat {
+          0%, 100% { transform: rotate(0deg) translateY(0); }
+          50% { transform: rotate(-3deg) translateY(-2px); }
+        }
+        @keyframes rightWingFloat {
+          0%, 100% { transform: rotate(0deg) translateY(0); }
+          50% { transform: rotate(3deg) translateY(-2px); }
+        }
+        .left-wing {
+          animation: leftWingFloat 2s ease-in-out infinite;
+          transform-origin: 45px 42px;
+        }
+        .right-wing {
+          animation: rightWingFloat 2s ease-in-out infinite;
+          transform-origin: 75px 42px;
+        }
+      `}
+    </style>
     
-    {/* Right wing */}
-    <path 
-      d="M75 40 C85 35, 100 30, 110 35 C115 38, 118 45, 112 50 C105 55, 90 52, 78 45"
-      stroke="#c4b5fd" 
-      strokeWidth="2.5" 
-      fill="#ede9fe"
-      strokeLinecap="round"
-    />
-    <path 
-      d="M78 42 C88 38, 98 36, 105 40 C108 42, 108 46, 102 48 C95 50, 85 47, 78 42"
-      stroke="#c4b5fd" 
-      strokeWidth="1.5" 
-      fill="#f5f3ff"
-      strokeLinecap="round"
-    />
+    {/* Left wing group */}
+    <g className="left-wing">
+      <path 
+        d="M45 40 C35 35, 20 30, 10 35 C5 38, 2 45, 8 50 C15 55, 30 52, 42 45"
+        stroke="#c4b5fd" 
+        strokeWidth="2.5" 
+        fill="#ede9fe"
+        strokeLinecap="round"
+      />
+      <path 
+        d="M42 42 C32 38, 22 36, 15 40 C12 42, 12 46, 18 48 C25 50, 35 47, 42 42"
+        stroke="#c4b5fd" 
+        strokeWidth="1.5" 
+        fill="#f5f3ff"
+        strokeLinecap="round"
+      />
+      {/* Wing feather details */}
+      <path d="M20 38 C22 42, 28 44, 35 43" stroke="#ddd6fe" strokeWidth="1" fill="none" strokeLinecap="round" />
+      <path d="M15 42 C18 45, 25 47, 32 45" stroke="#ddd6fe" strokeWidth="1" fill="none" strokeLinecap="round" />
+    </g>
     
-    {/* Heart */}
+    {/* Right wing group */}
+    <g className="right-wing">
+      <path 
+        d="M75 40 C85 35, 100 30, 110 35 C115 38, 118 45, 112 50 C105 55, 90 52, 78 45"
+        stroke="#c4b5fd" 
+        strokeWidth="2.5" 
+        fill="#ede9fe"
+        strokeLinecap="round"
+      />
+      <path 
+        d="M78 42 C88 38, 98 36, 105 40 C108 42, 108 46, 102 48 C95 50, 85 47, 78 42"
+        stroke="#c4b5fd" 
+        strokeWidth="1.5" 
+        fill="#f5f3ff"
+        strokeLinecap="round"
+      />
+      {/* Wing feather details */}
+      <path d="M100 38 C98 42, 92 44, 85 43" stroke="#ddd6fe" strokeWidth="1" fill="none" strokeLinecap="round" />
+      <path d="M105 42 C102 45, 95 47, 88 45" stroke="#ddd6fe" strokeWidth="1" fill="none" strokeLinecap="round" />
+    </g>
+    
+    {/* Heart (stays still) */}
     <path 
       d="M60 70 C60 70, 40 50, 40 38 C40 28, 48 22, 60 32 C72 22, 80 28, 80 38 C80 50, 60 70, 60 70Z"
       fill="url(#heartGradient)"
