@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { moods, MoodType } from '@/data/stories';
 import { getTimeBasedGreeting, getWarmMessage } from '@/utils/greetings';
 
 interface MoodSelectorProps {
   userName: string;
   onSelectMood: (mood: MoodType) => void;
+  onBack: () => void;
 }
 
-const MoodSelector = ({ userName, onSelectMood }: MoodSelectorProps) => {
+const MoodSelector = ({ userName, onSelectMood, onBack }: MoodSelectorProps) => {
   const [hoveredMood, setHoveredMood] = useState<MoodType | null>(null);
   const [selectedMood, setSelectedMood] = useState<MoodType | null>(null);
   const { greeting, emoji } = getTimeBasedGreeting();
@@ -22,7 +25,20 @@ const MoodSelector = ({ userName, onSelectMood }: MoodSelectorProps) => {
   };
 
   return (
-    <div className="animate-fade-in space-y-8 text-center w-full max-w-2xl mx-auto px-4">
+    <div className="animate-fade-in space-y-6 text-center w-full max-w-2xl mx-auto px-4">
+      {/* Back button */}
+      <div className="flex justify-start">
+        <Button
+          variant="ghost"
+          onClick={onBack}
+          className="text-purple-600 hover:text-purple-800 hover:bg-purple-100/50 -ml-2"
+          aria-label="Go back to welcome screen"
+        >
+          <ArrowLeft className="h-5 w-5 mr-1" />
+          Back
+        </Button>
+      </div>
+
       {/* Warm personalized greeting */}
       <div className="space-y-3">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-800 leading-tight">
