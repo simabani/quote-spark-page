@@ -4,43 +4,44 @@
 
 @layer base {
   :root {
-    --background: 270 50% 98%;
-    --foreground: 270 30% 20%;
+    --background: 30 60% 98%;
+    --foreground: 0 0% 24%;
 
-    --card: 270 40% 97%;
-    --card-foreground: 270 30% 20%;
+    --card: 30 50% 97%;
+    --card-foreground: 0 0% 24%;
 
-    --popover: 270 40% 97%;
-    --popover-foreground: 270 30% 20%;
+    --popover: 30 50% 97%;
+    --popover-foreground: 0 0% 24%;
 
-    --primary: 270 60% 70%;
-    --primary-foreground: 270 30% 15%;
+    --primary: 350 60% 92%;
+    --primary-foreground: 0 0% 24%;
 
-    --secondary: 200 60% 90%;
-    --secondary-foreground: 200 40% 25%;
+    --secondary: 260 50% 90%;
+    --secondary-foreground: 0 0% 24%;
 
-    --muted: 30 60% 95%;
-    --muted-foreground: 30 30% 40%;
+    --muted: 195 50% 92%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 50 70% 90%;
-    --accent-foreground: 50 40% 25%;
+    --accent: 35 100% 72%;
+    --accent-foreground: 0 0% 24%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 270 30% 88%;
-    --input: 270 30% 92%;
-    --ring: 270 60% 70%;
+    --border: 350 30% 88%;
+    --input: 350 30% 92%;
+    --ring: 350 60% 85%;
 
     --radius: 1rem;
 
-    /* Custom pastel colors */
-    --lavender: 270 60% 85%;
-    --baby-blue: 200 70% 88%;
-    --peach: 20 80% 90%;
-    --pale-yellow: 50 80% 92%;
-    --soft-pink: 340 60% 90%;
-    --mint: 150 50% 88%;
+    /* Little Lift brand colors */
+    --blush-pink: 350 60% 92%;
+    --soft-lilac: 260 50% 90%;
+    --misty-blue: 195 55% 87%;
+    --warm-peach: 30 100% 90%;
+    --golden-glow: 35 90% 72%;
+    --cream-white: 30 60% 98%;
+    --deep-charcoal: 0 0% 24%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -53,40 +54,41 @@
   }
 
   .dark {
-    --background: 270 20% 10%;
-    --foreground: 270 20% 95%;
+    --background: 0 0% 10%;
+    --foreground: 30 20% 95%;
 
-    --card: 270 20% 12%;
-    --card-foreground: 270 20% 95%;
+    --card: 0 0% 12%;
+    --card-foreground: 30 20% 95%;
 
-    --popover: 270 20% 12%;
-    --popover-foreground: 270 20% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 30 20% 95%;
 
-    --primary: 270 50% 60%;
-    --primary-foreground: 270 20% 95%;
+    --primary: 350 40% 40%;
+    --primary-foreground: 30 20% 95%;
 
-    --secondary: 200 40% 25%;
-    --secondary-foreground: 200 60% 90%;
+    --secondary: 260 30% 30%;
+    --secondary-foreground: 30 20% 95%;
 
-    --muted: 30 20% 20%;
-    --muted-foreground: 30 30% 70%;
+    --muted: 195 20% 20%;
+    --muted-foreground: 30 20% 70%;
 
-    --accent: 50 30% 25%;
-    --accent-foreground: 50 70% 90%;
+    --accent: 35 60% 45%;
+    --accent-foreground: 30 20% 95%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 270 20% 20%;
-    --input: 270 20% 20%;
-    --ring: 270 50% 60%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 350 40% 40%;
 
-    --lavender: 270 40% 30%;
-    --baby-blue: 200 40% 30%;
-    --peach: 20 40% 30%;
-    --pale-yellow: 50 40% 30%;
-    --soft-pink: 340 40% 30%;
-    --mint: 150 30% 30%;
+    --blush-pink: 350 30% 30%;
+    --soft-lilac: 260 25% 28%;
+    --misty-blue: 195 25% 28%;
+    --warm-peach: 30 40% 30%;
+    --golden-glow: 35 50% 35%;
+    --cream-white: 0 0% 12%;
+    --deep-charcoal: 30 20% 90%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
