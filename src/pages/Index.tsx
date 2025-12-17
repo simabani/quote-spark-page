@@ -37,7 +37,7 @@ const Index = () => {
 
   return (
     <div 
-      className="min-h-screen flex items-center justify-center p-4 sm:p-6 bg-gradient-to-br from-[#9b87f5] via-white to-[#D6BCFA] font-quicksand"
+      className="min-h-screen flex items-center justify-center p-4 sm:p-6 bg-gradient-to-br from-[#a855f7] via-[#fdf2f8] to-[#f0abfc] font-quicksand"
       role="main"
       aria-label="Little Lift - Emotional support through stories"
     >

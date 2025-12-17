@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Heart, RefreshCw, ArrowLeft } from 'lucide-react';
+import { Heart, RefreshCw, ArrowLeft, Share2, Copy, Twitter, Facebook } from 'lucide-react';
 import { Story, MoodType, moods, getRandomStoryForMood } from '@/data/stories';
 import { useToast } from '@/hooks/use-toast';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 interface StoryDisplayProps {
   mood: MoodType;
@@ -45,6 +51,32 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
       setStory(getRandomStoryForMood(mood));
       setIsAnimating(false);
     }, 300);
+  };
+
+  const getShareText = () => {
+    if (!story) return '';
+    return `"${story.title}" - A story from Little Lift 💜\n\n${story.content.slice(0, 200)}...\n\nFind comfort at`;
+  };
+
+  const handleCopyStory = async () => {
+    if (!story) return;
+    const text = `"${story.title}"\n\n${story.content}\n\n— From Little Lift 💜`;
+    await navigator.clipboard.writeText(text);
+    toast({
+      title: "Copied! 📋",
+      description: "Story copied to clipboard. Share the warmth!",
+    });
+  };
+
+  const handleShareTwitter = () => {
+    const text = encodeURIComponent(`"${story?.title}" - A story from Little Lift that made me feel better 💜`);
+    const url = encodeURIComponent(window.location.origin);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+  };
+
+  const handleShareFacebook = () => {
+    const url = encodeURIComponent(window.location.origin);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
   };
 
   const isStorySaved = story && savedStories.includes(story.id);
@@ -91,7 +123,7 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
       </Card>
 
       {/* Action buttons */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+      <div className="flex flex-wrap items-center justify-center gap-3">
         <Button
           onClick={handleSaveStory}
           disabled={isStorySaved}
@@ -99,20 +131,66 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
           aria-label={isStorySaved ? "Story already saved" : "Save this story to favorites"}
           className={`
             rounded-full px-5 sm:px-6 py-3 h-auto
-            border-2 border-purple-300
-            bg-white/60 hover:bg-purple-100
+            border-2 border-pink-300
+            bg-white/60 hover:bg-pink-100
             text-purple-700 font-medium
             transition-all duration-300
-            focus:ring-2 focus:ring-purple-400 focus:ring-offset-2
+            focus:ring-2 focus:ring-pink-400 focus:ring-offset-2
             ${isStorySaved ? 'opacity-70' : 'hover:scale-105 hover:shadow-glow-purple'}
           `}
         >
           <Heart 
-            className={`mr-2 h-5 w-5 transition-colors ${isStorySaved ? 'fill-red-400 text-red-400' : ''}`} 
+            className={`mr-2 h-5 w-5 transition-colors ${isStorySaved ? 'fill-pink-500 text-pink-500' : ''}`} 
             aria-hidden="true"
           />
           {isStorySaved ? 'Saved!' : 'Save story'}
         </Button>
+
+        {/* Share dropdown */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="outline"
+              aria-label="Share this story"
+              className="
+                rounded-full px-5 sm:px-6 py-3 h-auto
+                border-2 border-pink-300
+                bg-white/60 hover:bg-pink-100
+                text-purple-700 font-medium
+                hover:scale-105
+                hover:shadow-glow-purple
+                transition-all duration-300
+                focus:ring-2 focus:ring-pink-400 focus:ring-offset-2
+              "
+            >
+              <Share2 className="mr-2 h-5 w-5" aria-hidden="true" />
+              Share
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-48 bg-white/95 backdrop-blur-sm border-2 border-pink-200 rounded-xl">
+            <DropdownMenuItem 
+              onClick={handleCopyStory}
+              className="cursor-pointer hover:bg-pink-50 rounded-lg"
+            >
+              <Copy className="mr-2 h-4 w-4 text-purple-600" />
+              Copy story
+            </DropdownMenuItem>
+            <DropdownMenuItem 
+              onClick={handleShareTwitter}
+              className="cursor-pointer hover:bg-pink-50 rounded-lg"
+            >
+              <Twitter className="mr-2 h-4 w-4 text-blue-500" />
+              Share on X
+            </DropdownMenuItem>
+            <DropdownMenuItem 
+              onClick={handleShareFacebook}
+              className="cursor-pointer hover:bg-pink-50 rounded-lg"
+            >
+              <Facebook className="mr-2 h-4 w-4 text-blue-600" />
+              Share on Facebook
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         <Button
           onClick={handleNewStory}
@@ -120,13 +198,13 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
           aria-label="Read another story for this mood"
           className="
             rounded-full px-5 sm:px-6 py-3 h-auto
-            border-2 border-purple-300
-            bg-white/60 hover:bg-purple-100
+            border-2 border-pink-300
+            bg-white/60 hover:bg-pink-100
             text-purple-700 font-medium
             hover:scale-105
             hover:shadow-glow-purple
             transition-all duration-300
-            focus:ring-2 focus:ring-purple-400 focus:ring-offset-2
+            focus:ring-2 focus:ring-pink-400 focus:ring-offset-2
           "
         >
           <RefreshCw className="mr-2 h-5 w-5" aria-hidden="true" />
@@ -139,13 +217,13 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
           aria-label="Go back and choose a different mood"
           className="
             rounded-full px-5 sm:px-6 py-3 h-auto
-            border-2 border-purple-300
-            bg-white/60 hover:bg-purple-100
+            border-2 border-pink-300
+            bg-white/60 hover:bg-pink-100
             text-purple-700 font-medium
             hover:scale-105
             hover:shadow-glow-purple
             transition-all duration-300
-            focus:ring-2 focus:ring-purple-400 focus:ring-offset-2
+            focus:ring-2 focus:ring-pink-400 focus:ring-offset-2
           "
         >
           <ArrowLeft className="mr-2 h-5 w-5" aria-hidden="true" />

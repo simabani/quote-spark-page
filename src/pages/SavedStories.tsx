@@ -44,7 +44,7 @@ const SavedStories = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#9b87f5] via-white to-[#D6BCFA] py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#a855f7] via-[#fdf2f8] to-[#f0abfc] py-8 px-4">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
