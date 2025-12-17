@@ -5,6 +5,7 @@ export type MoodType =
   | 'hopeless' 
   | 'angry' 
   | 'lonely' 
+  | 'worried'
   | 'okay';
 
 export interface Mood {
@@ -71,6 +72,14 @@ export const moods: Mood[] = [
     description: 'Needing connection?',
     color: 'bg-violet-100/80',
     ariaLabel: 'I am feeling lonely'
+  },
+  { 
+    id: 'worried', 
+    emoji: '😟', 
+    label: 'Worried', 
+    description: 'Overthinking things?',
+    color: 'bg-amber-100/80',
+    ariaLabel: 'I am feeling worried'
   },
   { 
     id: 'okay', 
@@ -223,6 +232,32 @@ Then one day, it noticed something: its roots were connected to every tree aroun
 
 Even when you feel alone, you are connected to others in ways you cannot see. You are part of something bigger. 🌲`,
     mood: 'lonely',
+  },
+
+  // Worried stories
+  {
+    id: 'worried-1',
+    title: 'The Squirrel and the Acorns',
+    content: `A squirrel once spent all autumn worrying about winter. "What if I don't have enough acorns? What if I forget where I buried them?"
+
+She gathered and gathered, barely sleeping, barely eating.
+
+When winter came, she discovered she had buried far more than she needed. And the acorns she'd "lost"? They grew into new oak trees.
+
+Your worries often prepare you better than you realize. And sometimes, what feels like loss becomes unexpected growth. 🌰`,
+    mood: 'worried',
+  },
+  {
+    id: 'worried-2',
+    title: 'The Weather Watcher',
+    content: `An old farmer spent every morning watching the sky, worried about storms that might come.
+
+His grandson asked, "Grandpa, why do you worry so much about weather you can't control?"
+
+The farmer smiled. "I don't watch the sky to control it. I watch it so I'm ready. But I've learned — most storms I worried about never came. And the ones that did? We survived them all."
+
+You're stronger than the storms you're imagining. 🌤️`,
+    mood: 'worried',
   },
 
   // Okay stories
