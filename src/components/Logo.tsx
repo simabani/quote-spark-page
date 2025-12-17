@@ -7,121 +7,112 @@ interface LogoProps {
   className?: string;
 }
 
-const HeartWithWings = ({ className }: { className?: string }) => (
+const HeartWithSparkles = ({ className }: { className?: string }) => (
   <svg 
-    viewBox="0 0 140 80" 
+    viewBox="0 0 100 100" 
     className={className}
     fill="none" 
     xmlns="http://www.w3.org/2000/svg"
   >
     <style>
       {`
-        @keyframes leftWingFloat {
-          0%, 100% { transform: rotate(0deg) translateY(0); }
-          50% { transform: rotate(-5deg) translateY(-3px); }
-        }
-        @keyframes rightWingFloat {
-          0%, 100% { transform: rotate(0deg) translateY(0); }
-          50% { transform: rotate(5deg) translateY(-3px); }
-        }
-        @keyframes heartGlow {
+        @keyframes heartPulse {
           0%, 100% { 
-            filter: drop-shadow(0 0 4px rgba(244, 114, 182, 0.4));
+            transform: scale(1);
+            filter: drop-shadow(0 0 8px rgba(244, 114, 182, 0.5));
           }
           50% { 
-            filter: drop-shadow(0 0 12px rgba(244, 114, 182, 0.7));
+            transform: scale(1.03);
+            filter: drop-shadow(0 0 16px rgba(244, 114, 182, 0.8));
           }
         }
-        .left-wing {
-          animation: leftWingFloat 2.5s ease-in-out infinite;
-          transform-origin: 55px 40px;
+        @keyframes sparkle1 {
+          0%, 100% { opacity: 0.3; transform: scale(0.8); }
+          50% { opacity: 1; transform: scale(1.2); }
         }
-        .right-wing {
-          animation: rightWingFloat 2.5s ease-in-out infinite;
-          transform-origin: 85px 40px;
+        @keyframes sparkle2 {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.3; transform: scale(0.7); }
         }
-        .heart-group {
-          animation: heartGlow 2s ease-in-out infinite;
+        @keyframes sparkle3 {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.3); }
         }
+        .heart-main {
+          animation: heartPulse 2s ease-in-out infinite;
+          transform-origin: center;
+        }
+        .sparkle-1 { animation: sparkle1 1.5s ease-in-out infinite; }
+        .sparkle-2 { animation: sparkle2 2s ease-in-out infinite 0.3s; }
+        .sparkle-3 { animation: sparkle3 1.8s ease-in-out infinite 0.6s; }
+        .sparkle-4 { animation: sparkle1 2.2s ease-in-out infinite 0.9s; }
+        .sparkle-5 { animation: sparkle2 1.6s ease-in-out infinite 0.4s; }
+        .sparkle-6 { animation: sparkle3 2s ease-in-out infinite 0.7s; }
       `}
     </style>
     
-    {/* Left wing - feathered design */}
-    <g className="left-wing">
-      {/* Outer feathers */}
-      <path 
-        d="M52 38 Q40 32, 25 28 Q15 26, 8 32 Q4 38, 10 42 Q18 46, 30 44 Q42 42, 52 38"
-        fill="#ede9fe"
-        stroke="#c4b5fd"
-        strokeWidth="1.5"
-      />
-      {/* Middle feathers */}
-      <path 
-        d="M52 40 Q42 36, 30 34 Q20 33, 14 38 Q12 42, 18 45 Q28 48, 40 45 Q48 43, 52 40"
-        fill="#f5f3ff"
-        stroke="#ddd6fe"
-        strokeWidth="1"
-      />
-      {/* Inner feathers */}
-      <path 
-        d="M52 42 Q44 40, 35 39 Q28 39, 24 42 Q22 45, 28 47 Q36 48, 45 46 Q50 44, 52 42"
-        fill="#faf5ff"
-        stroke="#e9d5ff"
-        strokeWidth="0.8"
-      />
-      {/* Feather lines */}
-      <path d="M18 36 Q22 38, 28 38" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
-      <path d="M22 40 Q28 41, 35 40" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
-      <path d="M28 44 Q34 44, 40 43" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
+    {/* Sparkles around heart */}
+    <g className="sparkle-1">
+      <path d="M20 30 L22 25 L24 30 L29 32 L24 34 L22 39 L20 34 L15 32 Z" fill="#fcd34d" />
+    </g>
+    <g className="sparkle-2">
+      <path d="M78 25 L80 21 L82 25 L86 27 L82 29 L80 33 L78 29 L74 27 Z" fill="#fcd34d" />
+    </g>
+    <g className="sparkle-3">
+      <path d="M15 55 L16.5 52 L18 55 L21 56.5 L18 58 L16.5 61 L15 58 L12 56.5 Z" fill="#c4b5fd" />
+    </g>
+    <g className="sparkle-4">
+      <path d="M85 50 L86.5 47 L88 50 L91 51.5 L88 53 L86.5 56 L85 53 L82 51.5 Z" fill="#c4b5fd" />
+    </g>
+    <g className="sparkle-5">
+      <circle cx="28" cy="18" r="2" fill="#fcd34d" />
+    </g>
+    <g className="sparkle-6">
+      <circle cx="72" cy="15" r="1.5" fill="#fcd34d" />
+    </g>
+    <g className="sparkle-2">
+      <circle cx="12" cy="42" r="1.5" fill="#f9a8d4" />
+    </g>
+    <g className="sparkle-3">
+      <circle cx="88" cy="38" r="2" fill="#f9a8d4" />
     </g>
     
-    {/* Right wing - feathered design */}
-    <g className="right-wing">
-      {/* Outer feathers */}
+    {/* Main heart with glow */}
+    <g className="heart-main">
+      {/* Heart shadow/glow base */}
       <path 
-        d="M88 38 Q100 32, 115 28 Q125 26, 132 32 Q136 38, 130 42 Q122 46, 110 44 Q98 42, 88 38"
-        fill="#ede9fe"
-        stroke="#c4b5fd"
-        strokeWidth="1.5"
+        d="M50 85 C50 85, 20 58, 20 40 C20 25, 32 15, 50 32 C68 15, 80 25, 80 40 C80 58, 50 85, 50 85Z"
+        fill="rgba(244, 114, 182, 0.2)"
+        transform="translate(0, 2)"
       />
-      {/* Middle feathers */}
+      
+      {/* Heart main body */}
       <path 
-        d="M88 40 Q98 36, 110 34 Q120 33, 126 38 Q128 42, 122 45 Q112 48, 100 45 Q92 43, 88 40"
-        fill="#f5f3ff"
-        stroke="#ddd6fe"
-        strokeWidth="1"
-      />
-      {/* Inner feathers */}
-      <path 
-        d="M88 42 Q96 40, 105 39 Q112 39, 116 42 Q118 45, 112 47 Q104 48, 95 46 Q90 44, 88 42"
-        fill="#faf5ff"
-        stroke="#e9d5ff"
-        strokeWidth="0.8"
-      />
-      {/* Feather lines */}
-      <path d="M122 36 Q118 38, 112 38" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
-      <path d="M118 40 Q112 41, 105 40" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
-      <path d="M112 44 Q106 44, 100 43" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
-    </g>
-    
-    {/* Heart with glow */}
-    <g className="heart-group">
-      <path 
-        d="M70 68 C70 68, 50 50, 50 38 C50 28, 58 22, 70 32 C82 22, 90 28, 90 38 C90 50, 70 68, 70 68Z"
+        d="M50 82 C50 82, 22 56, 22 40 C22 26, 34 18, 50 33 C66 18, 78 26, 78 40 C78 56, 50 82, 50 82Z"
         fill="url(#heartGradient)"
-        stroke="#ec4899"
-        strokeWidth="1.5"
+        stroke="url(#heartStroke)"
+        strokeWidth="2"
       />
-      {/* Heart shine */}
-      <ellipse cx="60" cy="36" rx="4" ry="5" fill="rgba(255,255,255,0.5)" />
-      <ellipse cx="58" cy="34" rx="2" ry="2.5" fill="rgba(255,255,255,0.7)" />
+      
+      {/* Large shine */}
+      <ellipse cx="36" cy="36" rx="8" ry="10" fill="rgba(255,255,255,0.4)" />
+      
+      {/* Small shine */}
+      <ellipse cx="33" cy="32" rx="4" ry="5" fill="rgba(255,255,255,0.6)" />
+      
+      {/* Tiny highlight */}
+      <circle cx="31" cy="29" r="2" fill="rgba(255,255,255,0.8)" />
     </g>
     
     <defs>
-      <linearGradient id="heartGradient" x1="50" y1="22" x2="90" y2="68" gradientUnits="userSpaceOnUse">
+      <linearGradient id="heartGradient" x1="22" y1="18" x2="78" y2="82" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stopColor="#fda4af" />
-        <stop offset="50%" stopColor="#fb7185" />
-        <stop offset="100%" stopColor="#f472b6" />
+        <stop offset="40%" stopColor="#fb7185" />
+        <stop offset="100%" stopColor="#e11d48" />
+      </linearGradient>
+      <linearGradient id="heartStroke" x1="22" y1="18" x2="78" y2="82" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#fecdd3" />
+        <stop offset="100%" stopColor="#be123c" />
       </linearGradient>
     </defs>
   </svg>
@@ -129,19 +120,17 @@ const HeartWithWings = ({ className }: { className?: string }) => (
 
 const Logo = ({ showText = true, showTagline = false, size = 'md', className = '' }: LogoProps) => {
   const sizes = {
-    sm: { icon: 'w-20 h-12', text: 'text-xl', tagline: 'text-sm' },
-    md: { icon: 'w-28 h-16', text: 'text-2xl', tagline: 'text-base' },
-    lg: { icon: 'w-36 h-24', text: 'text-3xl', tagline: 'text-lg' },
-    xl: { icon: 'w-48 h-32', text: 'text-4xl md:text-5xl', tagline: 'text-lg' },
+    sm: { icon: 'w-14 h-14', text: 'text-xl', tagline: 'text-sm' },
+    md: { icon: 'w-20 h-20', text: 'text-2xl', tagline: 'text-base' },
+    lg: { icon: 'w-28 h-28', text: 'text-3xl', tagline: 'text-lg' },
+    xl: { icon: 'w-36 h-36', text: 'text-4xl md:text-5xl', tagline: 'text-lg' },
   };
 
   return (
-    <div className={`flex flex-col items-center justify-center gap-1 ${className}`}>
-      <div>
-        <HeartWithWings className={sizes[size].icon} />
-      </div>
+    <div className={`flex flex-col items-center justify-center ${className}`}>
+      <HeartWithSparkles className={sizes[size].icon} />
       {showText && (
-        <h1 className={`font-quicksand font-bold ${sizes[size].text} text-purple-700`}>
+        <h1 className={`font-quicksand font-bold ${sizes[size].text} text-purple-700 -mt-1`}>
           Little Lift
         </h1>
       )}
