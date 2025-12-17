@@ -22,6 +22,11 @@ const Index = () => {
     setCurrentStep('story');
   };
 
+  const handleBack = () => {
+    setUserName('');
+    setCurrentStep('welcome');
+  };
+
   const handlePickAnotherMood = () => {
     setSelectedMood(null);
     setCurrentStep('mood');
@@ -57,7 +62,7 @@ const Index = () => {
           )}
           
           {currentStep === 'mood' && (
-            <MoodSelector userName={userName} onSelectMood={handleMoodSelect} />
+            <MoodSelector userName={userName} onSelectMood={handleMoodSelect} onBack={handleBack} />
           )}
           
           {currentStep === 'story' && selectedMood && (
