@@ -11,7 +11,9 @@ export interface Mood {
   id: MoodType;
   emoji: string;
   label: string;
+  description: string;
   color: string;
+  ariaLabel: string;
 }
 
 export interface Story {
@@ -22,13 +24,62 @@ export interface Story {
 }
 
 export const moods: Mood[] = [
-  { id: 'sad', emoji: '😢', label: 'Sad', color: 'bg-baby-blue' },
-  { id: 'anxious', emoji: '😰', label: 'Anxious', color: 'bg-lavender' },
-  { id: 'tired', emoji: '😴', label: 'Tired', color: 'bg-soft-purple' },
-  { id: 'hopeless', emoji: '💔', label: 'Hopeless', color: 'bg-light-purple' },
-  { id: 'angry', emoji: '😡', label: 'Angry', color: 'bg-soft-purple' },
-  { id: 'lonely', emoji: '🥺', label: 'Lonely', color: 'bg-lavender' },
-  { id: 'okay', emoji: '🙂', label: 'Okay', color: 'bg-baby-blue' },
+  { 
+    id: 'sad', 
+    emoji: '😢', 
+    label: 'Sad', 
+    description: 'Feeling heavy or down?',
+    color: 'bg-blue-100/80',
+    ariaLabel: 'I am feeling sad'
+  },
+  { 
+    id: 'anxious', 
+    emoji: '😰', 
+    label: 'Anxious', 
+    description: 'Mind racing or worried?',
+    color: 'bg-purple-100/80',
+    ariaLabel: 'I am feeling anxious'
+  },
+  { 
+    id: 'tired', 
+    emoji: '😴', 
+    label: 'Tired', 
+    description: 'Running on empty?',
+    color: 'bg-indigo-100/80',
+    ariaLabel: 'I am feeling tired'
+  },
+  { 
+    id: 'hopeless', 
+    emoji: '💔', 
+    label: 'Hopeless', 
+    description: 'Struggling to see light?',
+    color: 'bg-pink-100/80',
+    ariaLabel: 'I am feeling hopeless'
+  },
+  { 
+    id: 'angry', 
+    emoji: '😡', 
+    label: 'Angry', 
+    description: 'Frustration building up?',
+    color: 'bg-rose-100/80',
+    ariaLabel: 'I am feeling angry'
+  },
+  { 
+    id: 'lonely', 
+    emoji: '🥺', 
+    label: 'Lonely', 
+    description: 'Needing connection?',
+    color: 'bg-violet-100/80',
+    ariaLabel: 'I am feeling lonely'
+  },
+  { 
+    id: 'okay', 
+    emoji: '🙂', 
+    label: 'Okay', 
+    description: 'Just getting by?',
+    color: 'bg-teal-100/80',
+    ariaLabel: 'I am feeling okay'
+  },
 ];
 
 export const stories: Story[] = [

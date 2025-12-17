@@ -28,24 +28,30 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-[#9b87f5] via-white to-[#D6BCFA] font-quicksand">
-      {/* Decorative background elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 text-6xl opacity-20 animate-float">☁️</div>
-        <div className="absolute top-40 right-20 text-5xl opacity-20 animate-float" style={{ animationDelay: '1s' }}>✨</div>
-        <div className="absolute bottom-32 left-20 text-5xl opacity-20 animate-float" style={{ animationDelay: '2s' }}>🌿</div>
-        <div className="absolute bottom-20 right-10 text-6xl opacity-20 animate-float" style={{ animationDelay: '0.5s' }}>🌸</div>
-        <div className="absolute top-1/2 left-5 text-4xl opacity-15 animate-float" style={{ animationDelay: '1.5s' }}>💫</div>
+    <div 
+      className="min-h-screen flex items-center justify-center p-4 sm:p-6 bg-gradient-to-br from-[#9b87f5] via-white to-[#D6BCFA] font-quicksand"
+      role="main"
+      aria-label="Little Lift - Emotional support through stories"
+    >
+      {/* Decorative background elements - hidden from screen readers */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="absolute top-16 sm:top-20 left-6 sm:left-10 text-5xl sm:text-6xl opacity-20 animate-float">☁️</div>
+        <div className="absolute top-32 sm:top-40 right-12 sm:right-20 text-4xl sm:text-5xl opacity-20 animate-float" style={{ animationDelay: '1s' }}>✨</div>
+        <div className="absolute bottom-24 sm:bottom-32 left-12 sm:left-20 text-4xl sm:text-5xl opacity-20 animate-float" style={{ animationDelay: '2s' }}>🌿</div>
+        <div className="absolute bottom-16 sm:bottom-20 right-6 sm:right-10 text-5xl sm:text-6xl opacity-20 animate-float" style={{ animationDelay: '0.5s' }}>🌸</div>
+        <div className="absolute top-1/2 left-3 sm:left-5 text-3xl sm:text-4xl opacity-15 animate-float" style={{ animationDelay: '1.5s' }}>💫</div>
       </div>
 
       <div className="w-full max-w-4xl mx-auto text-center relative z-10">
+        {/* Header - only show on non-welcome screens */}
         {currentStep !== 'welcome' && (
-          <header className="mb-8 animate-fade-in">
+          <header className="mb-6 sm:mb-8 animate-fade-in">
             <Logo size="md" />
           </header>
         )}
 
-        <main className="min-h-[400px] flex items-center justify-center">
+        {/* Main content area */}
+        <main className="min-h-[450px] sm:min-h-[500px] flex items-center justify-center">
           {currentStep === 'welcome' && (
             <WelcomeScreen onStart={handleStart} />
           )}
@@ -63,8 +69,12 @@ const Index = () => {
           )}
         </main>
 
-        <footer className="mt-12 text-purple-600/80 text-sm animate-fade-in">
-          You are loved. You are enough. You matter. 🌟
+        {/* Footer - improved contrast */}
+        <footer className="mt-10 sm:mt-12 animate-fade-in">
+          <p className="text-purple-700/80 text-sm sm:text-base font-medium">
+            You are loved. You are enough. You matter.{' '}
+            <span role="img" aria-label="star">🌟</span>
+          </p>
         </footer>
       </div>
     </div>
