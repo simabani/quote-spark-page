@@ -21,7 +21,6 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
 
   useEffect(() => {
     setStory(getRandomStoryForMood(mood));
-    // Load saved stories from localStorage
     const saved = localStorage.getItem('savedStories');
     if (saved) {
       setSavedStories(JSON.parse(saved));
@@ -56,7 +55,7 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
     <div className="animate-fade-in space-y-6 w-full max-w-2xl mx-auto">
       <div className="text-center space-y-2">
         <span className="text-5xl">{currentMood?.emoji}</span>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground font-nunito">
           A story for when you're feeling {currentMood?.label.toLowerCase()}, {userName}
         </p>
       </div>
@@ -65,16 +64,16 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
         className={`
           p-6 md:p-8 
           ${currentMood?.color} 
-          border-2 border-primary/10 
+          border-2 border-blush-pink/30
           shadow-soft-lg
           transition-all duration-300
           ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}
         `}
       >
-        <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-4">
+        <h3 className="text-xl md:text-2xl font-nunito font-semibold text-foreground mb-4">
           {story.title}
         </h3>
-        <div className="text-foreground/80 leading-relaxed whitespace-pre-line text-base md:text-lg">
+        <div className="text-foreground/80 leading-relaxed whitespace-pre-line text-base md:text-lg font-nunito">
           {story.content}
         </div>
       </Card>
@@ -86,11 +85,12 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
           variant="outline"
           className={`
             rounded-full px-6 py-3 h-auto
-            border-2 border-soft-pink
-            bg-soft-pink/50 hover:bg-soft-pink
+            border-2 border-blush-pink
+            bg-blush-pink/50 hover:bg-blush-pink
             text-foreground
+            font-nunito font-medium
             transition-all duration-300
-            ${isStorySaved ? 'opacity-70' : 'hover:scale-105'}
+            ${isStorySaved ? 'opacity-70' : 'hover:scale-105 hover:shadow-glow'}
           `}
         >
           <Heart 
@@ -104,10 +104,12 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
           variant="outline"
           className="
             rounded-full px-6 py-3 h-auto
-            border-2 border-baby-blue
-            bg-baby-blue/50 hover:bg-baby-blue
+            border-2 border-misty-blue
+            bg-misty-blue/50 hover:bg-misty-blue
             text-foreground
+            font-nunito font-medium
             hover:scale-105
+            hover:shadow-glow
             transition-all duration-300
           "
         >
@@ -120,10 +122,12 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
           variant="outline"
           className="
             rounded-full px-6 py-3 h-auto
-            border-2 border-lavender
-            bg-lavender/50 hover:bg-lavender
+            border-2 border-soft-lilac
+            bg-soft-lilac/50 hover:bg-soft-lilac
             text-foreground
+            font-nunito font-medium
             hover:scale-105
+            hover:shadow-glow
             transition-all duration-300
           "
         >

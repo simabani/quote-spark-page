@@ -10,10 +10,10 @@ const MoodSelector = ({ userName, onSelectMood }: MoodSelectorProps) => {
   return (
     <div className="animate-fade-in space-y-8 text-center">
       <div className="space-y-2">
-        <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+        <h2 className="text-2xl md:text-3xl font-nunito font-semibold text-foreground">
           How are you feeling today, {userName}? 💭
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground font-nunito">
           Select the mood that best describes how you're feeling right now
         </p>
       </div>
@@ -31,8 +31,8 @@ const MoodSelector = ({ userName, onSelectMood }: MoodSelectorProps) => {
               rounded-2xl 
               border-2 border-transparent
               shadow-soft
-              hover:shadow-soft-lg
-              hover:border-primary/30
+              hover:shadow-glow
+              hover:border-golden-glow
               hover:scale-105
               active:scale-95
               transition-all duration-300 ease-out
@@ -43,7 +43,7 @@ const MoodSelector = ({ userName, onSelectMood }: MoodSelectorProps) => {
             <span className="text-4xl md:text-5xl mb-2 group-hover:animate-pulse-soft transition-transform">
               {mood.emoji}
             </span>
-            <span className="text-sm md:text-base font-medium text-foreground/80">
+            <span className="text-sm md:text-base font-nunito font-medium text-foreground/80">
               {mood.label}
             </span>
           </button>

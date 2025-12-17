@@ -52,12 +52,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        lavender: "hsl(var(--lavender))",
-        "baby-blue": "hsl(var(--baby-blue))",
-        peach: "hsl(var(--peach))",
-        "pale-yellow": "hsl(var(--pale-yellow))",
-        "soft-pink": "hsl(var(--soft-pink))",
-        mint: "hsl(var(--mint))",
+        // Little Lift brand colors
+        "blush-pink": "hsl(var(--blush-pink))",
+        "soft-lilac": "hsl(var(--soft-lilac))",
+        "misty-blue": "hsl(var(--misty-blue))",
+        "warm-peach": "hsl(var(--warm-peach))",
+        "golden-glow": "hsl(var(--golden-glow))",
+        "cream-white": "hsl(var(--cream-white))",
+        "deep-charcoal": "hsl(var(--deep-charcoal))",
       },
       keyframes: {
         "fade-in": {
@@ -106,6 +108,14 @@ export default {
             opacity: "0.7",
           },
         },
+        "lift": {
+          "0%, 100%": {
+            transform: "translateY(0) rotate(0deg)",
+          },
+          "50%": {
+            transform: "translateY(-8px) rotate(2deg)",
+          },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.5s ease-out forwards",
@@ -113,13 +123,16 @@ export default {
         "scale-in": "scale-in 0.4s ease-out forwards",
         "float": "float 3s ease-in-out infinite",
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",
+        "lift": "lift 2.5s ease-in-out infinite",
       },
       fontFamily: {
         quicksand: ['Quicksand', 'sans-serif'],
+        nunito: ['Nunito', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
         'soft-lg': '0 10px 40px -10px rgba(0, 0, 0, 0.08)',
+        'glow': '0 0 20px rgba(248, 196, 113, 0.3)',
       },
     },
   },

@@ -25,16 +25,16 @@ export interface Story {
 }
 
 export const moods: Mood[] = [
-  { id: 'sad', emoji: '😢', label: 'Sad', color: 'bg-baby-blue' },
-  { id: 'anxious', emoji: '😰', label: 'Anxious', color: 'bg-lavender' },
-  { id: 'tired', emoji: '😴', label: 'Tired', color: 'bg-soft-pink' },
-  { id: 'hopeless', emoji: '💔', label: 'Hopeless', color: 'bg-peach' },
-  { id: 'angry', emoji: '😡', label: 'Angry', color: 'bg-soft-pink' },
-  { id: 'lonely', emoji: '🥺', label: 'Lonely', color: 'bg-lavender' },
-  { id: 'okay', emoji: '🙂', label: 'Okay', color: 'bg-mint' },
-  { id: 'motivated', emoji: '💪', label: 'Motivated', color: 'bg-pale-yellow' },
-  { id: 'grateful', emoji: '🙏', label: 'Grateful', color: 'bg-peach' },
-  { id: 'joyful', emoji: '😄', label: 'Joyful', color: 'bg-pale-yellow' },
+  { id: 'sad', emoji: '😢', label: 'Sad', color: 'bg-misty-blue' },
+  { id: 'anxious', emoji: '😰', label: 'Anxious', color: 'bg-soft-lilac' },
+  { id: 'tired', emoji: '😴', label: 'Tired', color: 'bg-warm-peach' },
+  { id: 'hopeless', emoji: '💔', label: 'Hopeless', color: 'bg-blush-pink' },
+  { id: 'angry', emoji: '😡', label: 'Angry', color: 'bg-warm-peach' },
+  { id: 'lonely', emoji: '🥺', label: 'Lonely', color: 'bg-soft-lilac' },
+  { id: 'okay', emoji: '🙂', label: 'Okay', color: 'bg-misty-blue' },
+  { id: 'motivated', emoji: '💪', label: 'Motivated', color: 'bg-golden-glow/50' },
+  { id: 'grateful', emoji: '🙏', label: 'Grateful', color: 'bg-blush-pink' },
+  { id: 'joyful', emoji: '😄', label: 'Joyful', color: 'bg-golden-glow/50' },
 ];
 
 export const stories: Story[] = [
