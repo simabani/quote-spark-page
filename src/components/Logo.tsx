@@ -19,11 +19,11 @@ const HeartWithSparkles = ({ className }: { className?: string }) => (
         @keyframes heartPulse {
           0%, 100% { 
             transform: scale(1);
-            filter: drop-shadow(0 0 8px rgba(244, 114, 182, 0.5));
+            filter: drop-shadow(0 0 12px rgba(244, 63, 122, 0.6));
           }
           50% { 
             transform: scale(1.03);
-            filter: drop-shadow(0 0 16px rgba(244, 114, 182, 0.8));
+            filter: drop-shadow(0 0 20px rgba(244, 63, 122, 0.9));
           }
         }
         @keyframes sparkle1 {
@@ -106,13 +106,13 @@ const HeartWithSparkles = ({ className }: { className?: string }) => (
     
     <defs>
       <linearGradient id="heartGradient" x1="22" y1="18" x2="78" y2="82" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#fda4af" />
-        <stop offset="40%" stopColor="#fb7185" />
-        <stop offset="100%" stopColor="#e11d48" />
+        <stop offset="0%" stopColor="#ff6b9d" />
+        <stop offset="35%" stopColor="#f43f7a" />
+        <stop offset="100%" stopColor="#db2777" />
       </linearGradient>
       <linearGradient id="heartStroke" x1="22" y1="18" x2="78" y2="82" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#fecdd3" />
-        <stop offset="100%" stopColor="#be123c" />
+        <stop offset="0%" stopColor="#ffa4c4" />
+        <stop offset="100%" stopColor="#be185d" />
       </linearGradient>
     </defs>
   </svg>
