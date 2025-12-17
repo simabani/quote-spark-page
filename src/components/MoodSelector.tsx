@@ -118,10 +118,6 @@ const MoodSelector = ({ userName, onSelectMood }: MoodSelectorProps) => {
         ))}
       </div>
 
-      {/* Supportive subtext */}
-      <p className="text-sm sm:text-base text-purple-600/70 max-w-md mx-auto">
-        There are no wrong answers here. Just be honest with yourself. 🤍
-      </p>
     </div>
   );
 };
