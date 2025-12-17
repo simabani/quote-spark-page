@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Heart } from 'lucide-react';
 import WelcomeScreen from '../components/WelcomeScreen';
 import MoodSelector from '../components/MoodSelector';
 import StoryDisplay from '../components/StoryDisplay';
 import Logo from '../components/Logo';
+import { Button } from '@/components/ui/button';
 import { MoodType } from '@/data/stories';
 
 type AppStep = 'welcome' | 'mood' | 'story';
@@ -50,8 +53,19 @@ const Index = () => {
       <div className="w-full max-w-4xl mx-auto text-center relative z-10">
         {/* Header - only show on non-welcome screens */}
         {currentStep !== 'welcome' && (
-          <header className="mb-6 sm:mb-8 animate-fade-in">
+          <header className="mb-6 sm:mb-8 animate-fade-in flex items-center justify-between">
+            <div className="w-20" /> {/* Spacer */}
             <Logo size="md" />
+            <Link to="/saved">
+              <Button
+                variant="ghost"
+                className="text-purple-600 hover:text-purple-800 hover:bg-purple-100/50"
+                aria-label="View saved stories"
+              >
+                <Heart className="h-5 w-5 mr-1" />
+                Saved
+              </Button>
+            </Link>
           </header>
         )}
 
