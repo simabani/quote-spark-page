@@ -52,14 +52,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Little Lift brand colors
-        "blush-pink": "hsl(var(--blush-pink))",
-        "soft-lilac": "hsl(var(--soft-lilac))",
-        "misty-blue": "hsl(var(--misty-blue))",
-        "warm-peach": "hsl(var(--warm-peach))",
-        "golden-glow": "hsl(var(--golden-glow))",
-        "cream-white": "hsl(var(--cream-white))",
-        "deep-charcoal": "hsl(var(--deep-charcoal))",
+        lavender: "hsl(var(--lavender))",
+        "baby-blue": "hsl(var(--baby-blue))",
+        "soft-purple": "hsl(var(--soft-purple))",
+        "light-purple": "hsl(var(--light-purple))",
       },
       keyframes: {
         "fade-in": {
@@ -127,12 +123,10 @@ export default {
       },
       fontFamily: {
         quicksand: ['Quicksand', 'sans-serif'],
-        nunito: ['Nunito', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
         'soft-lg': '0 10px 40px -10px rgba(0, 0, 0, 0.08)',
-        'glow': '0 0 20px rgba(248, 196, 113, 0.3)',
       },
     },
   },

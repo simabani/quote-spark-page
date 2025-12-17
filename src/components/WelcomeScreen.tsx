@@ -19,23 +19,17 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
   };
 
   return (
-    <div className="animate-fade-in space-y-8 text-center max-w-md mx-auto">
-      <div className="space-y-6">
-        <Logo size="xl" showText={false} />
-        <div>
-          <h2 className="text-3xl md:text-4xl font-nunito font-semibold text-foreground">
-            Welcome, friend
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mt-2">
-            This is a safe space for you. Let's start with something simple.
-          </p>
-        </div>
-      </div>
+    <div className="animate-fade-in space-y-6 text-center max-w-md mx-auto">
+      <Logo size="xl" showText />
+      
+      <p className="text-lg text-purple-600 font-medium">
+        Stories that hug your heart 💜
+      </p>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="space-y-3">
-          <label className="text-foreground/80 font-medium font-nunito">
-            What's your name?
+      <form onSubmit={handleSubmit} className="space-y-5 pt-4">
+        <div className="space-y-2">
+          <label className="text-purple-700 font-medium">
+            Your name
           </label>
           <Input
             type="text"
@@ -44,16 +38,15 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
             onChange={(e) => setName(e.target.value)}
             className="
               max-w-xs mx-auto 
-              bg-cream-white
-              text-foreground 
-              placeholder:text-muted-foreground/60 
-              border-2 border-blush-pink
-              focus:border-golden-glow
-              rounded-2xl
+              bg-white/50
+              text-purple-700 
+              placeholder:text-purple-400 
+              border-2 border-purple-200
+              focus:border-purple-400
+              rounded-xl
               text-center
               text-lg
-              py-6
-              font-nunito
+              py-5
             "
           />
         </div>
@@ -62,21 +55,18 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
           type="submit"
           disabled={!name.trim()}
           className="
-            bg-blush-pink hover:bg-soft-lilac
-            text-foreground
+            bg-purple-600 hover:bg-purple-700
+            text-white
             rounded-full 
-            px-8 py-6 
+            px-8 py-5
             text-lg
-            font-nunito font-semibold
             shadow-soft
-            hover:shadow-glow
+            hover:shadow-soft-lg
             hover:scale-105
             active:scale-95
             transition-all duration-300
             disabled:opacity-50
             disabled:hover:scale-100
-            border-2 border-transparent
-            hover:border-golden-glow
           "
         >
           <Sparkles className="mr-2 h-5 w-5" />
