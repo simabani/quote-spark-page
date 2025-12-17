@@ -9,7 +9,7 @@ interface LogoProps {
 
 const HeartWithWings = ({ className }: { className?: string }) => (
   <svg 
-    viewBox="0 0 120 80" 
+    viewBox="0 0 140 80" 
     className={className}
     fill="none" 
     xmlns="http://www.w3.org/2000/svg"
@@ -18,79 +18,109 @@ const HeartWithWings = ({ className }: { className?: string }) => (
       {`
         @keyframes leftWingFloat {
           0%, 100% { transform: rotate(0deg) translateY(0); }
-          50% { transform: rotate(-3deg) translateY(-2px); }
+          50% { transform: rotate(-5deg) translateY(-3px); }
         }
         @keyframes rightWingFloat {
           0%, 100% { transform: rotate(0deg) translateY(0); }
-          50% { transform: rotate(3deg) translateY(-2px); }
+          50% { transform: rotate(5deg) translateY(-3px); }
+        }
+        @keyframes heartGlow {
+          0%, 100% { 
+            filter: drop-shadow(0 0 4px rgba(244, 114, 182, 0.4));
+          }
+          50% { 
+            filter: drop-shadow(0 0 12px rgba(244, 114, 182, 0.7));
+          }
         }
         .left-wing {
-          animation: leftWingFloat 2s ease-in-out infinite;
-          transform-origin: 45px 42px;
+          animation: leftWingFloat 2.5s ease-in-out infinite;
+          transform-origin: 55px 40px;
         }
         .right-wing {
-          animation: rightWingFloat 2s ease-in-out infinite;
-          transform-origin: 75px 42px;
+          animation: rightWingFloat 2.5s ease-in-out infinite;
+          transform-origin: 85px 40px;
+        }
+        .heart-group {
+          animation: heartGlow 2s ease-in-out infinite;
         }
       `}
     </style>
     
-    {/* Left wing group */}
+    {/* Left wing - feathered design */}
     <g className="left-wing">
+      {/* Outer feathers */}
       <path 
-        d="M45 40 C35 35, 20 30, 10 35 C5 38, 2 45, 8 50 C15 55, 30 52, 42 45"
-        stroke="#c4b5fd" 
-        strokeWidth="2.5" 
+        d="M52 38 Q40 32, 25 28 Q15 26, 8 32 Q4 38, 10 42 Q18 46, 30 44 Q42 42, 52 38"
         fill="#ede9fe"
-        strokeLinecap="round"
+        stroke="#c4b5fd"
+        strokeWidth="1.5"
       />
+      {/* Middle feathers */}
       <path 
-        d="M42 42 C32 38, 22 36, 15 40 C12 42, 12 46, 18 48 C25 50, 35 47, 42 42"
-        stroke="#c4b5fd" 
-        strokeWidth="1.5" 
+        d="M52 40 Q42 36, 30 34 Q20 33, 14 38 Q12 42, 18 45 Q28 48, 40 45 Q48 43, 52 40"
         fill="#f5f3ff"
-        strokeLinecap="round"
+        stroke="#ddd6fe"
+        strokeWidth="1"
       />
-      {/* Wing feather details */}
-      <path d="M20 38 C22 42, 28 44, 35 43" stroke="#ddd6fe" strokeWidth="1" fill="none" strokeLinecap="round" />
-      <path d="M15 42 C18 45, 25 47, 32 45" stroke="#ddd6fe" strokeWidth="1" fill="none" strokeLinecap="round" />
+      {/* Inner feathers */}
+      <path 
+        d="M52 42 Q44 40, 35 39 Q28 39, 24 42 Q22 45, 28 47 Q36 48, 45 46 Q50 44, 52 42"
+        fill="#faf5ff"
+        stroke="#e9d5ff"
+        strokeWidth="0.8"
+      />
+      {/* Feather lines */}
+      <path d="M18 36 Q22 38, 28 38" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
+      <path d="M22 40 Q28 41, 35 40" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
+      <path d="M28 44 Q34 44, 40 43" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
     </g>
     
-    {/* Right wing group */}
+    {/* Right wing - feathered design */}
     <g className="right-wing">
+      {/* Outer feathers */}
       <path 
-        d="M75 40 C85 35, 100 30, 110 35 C115 38, 118 45, 112 50 C105 55, 90 52, 78 45"
-        stroke="#c4b5fd" 
-        strokeWidth="2.5" 
+        d="M88 38 Q100 32, 115 28 Q125 26, 132 32 Q136 38, 130 42 Q122 46, 110 44 Q98 42, 88 38"
         fill="#ede9fe"
-        strokeLinecap="round"
+        stroke="#c4b5fd"
+        strokeWidth="1.5"
       />
+      {/* Middle feathers */}
       <path 
-        d="M78 42 C88 38, 98 36, 105 40 C108 42, 108 46, 102 48 C95 50, 85 47, 78 42"
-        stroke="#c4b5fd" 
-        strokeWidth="1.5" 
+        d="M88 40 Q98 36, 110 34 Q120 33, 126 38 Q128 42, 122 45 Q112 48, 100 45 Q92 43, 88 40"
         fill="#f5f3ff"
-        strokeLinecap="round"
+        stroke="#ddd6fe"
+        strokeWidth="1"
       />
-      {/* Wing feather details */}
-      <path d="M100 38 C98 42, 92 44, 85 43" stroke="#ddd6fe" strokeWidth="1" fill="none" strokeLinecap="round" />
-      <path d="M105 42 C102 45, 95 47, 88 45" stroke="#ddd6fe" strokeWidth="1" fill="none" strokeLinecap="round" />
+      {/* Inner feathers */}
+      <path 
+        d="M88 42 Q96 40, 105 39 Q112 39, 116 42 Q118 45, 112 47 Q104 48, 95 46 Q90 44, 88 42"
+        fill="#faf5ff"
+        stroke="#e9d5ff"
+        strokeWidth="0.8"
+      />
+      {/* Feather lines */}
+      <path d="M122 36 Q118 38, 112 38" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
+      <path d="M118 40 Q112 41, 105 40" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
+      <path d="M112 44 Q106 44, 100 43" stroke="#d8b4fe" strokeWidth="0.6" fill="none" opacity="0.7" />
     </g>
     
-    {/* Heart (stays still) */}
-    <path 
-      d="M60 70 C60 70, 40 50, 40 38 C40 28, 48 22, 60 32 C72 22, 80 28, 80 38 C80 50, 60 70, 60 70Z"
-      fill="url(#heartGradient)"
-      stroke="#a78bfa"
-      strokeWidth="2"
-    />
-    
-    {/* Heart shine */}
-    <ellipse cx="50" cy="36" rx="4" ry="5" fill="rgba(255,255,255,0.6)" />
+    {/* Heart with glow */}
+    <g className="heart-group">
+      <path 
+        d="M70 68 C70 68, 50 50, 50 38 C50 28, 58 22, 70 32 C82 22, 90 28, 90 38 C90 50, 70 68, 70 68Z"
+        fill="url(#heartGradient)"
+        stroke="#ec4899"
+        strokeWidth="1.5"
+      />
+      {/* Heart shine */}
+      <ellipse cx="60" cy="36" rx="4" ry="5" fill="rgba(255,255,255,0.5)" />
+      <ellipse cx="58" cy="34" rx="2" ry="2.5" fill="rgba(255,255,255,0.7)" />
+    </g>
     
     <defs>
-      <linearGradient id="heartGradient" x1="40" y1="22" x2="80" y2="70" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#f9a8d4" />
+      <linearGradient id="heartGradient" x1="50" y1="22" x2="90" y2="68" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#fda4af" />
+        <stop offset="50%" stopColor="#fb7185" />
         <stop offset="100%" stopColor="#f472b6" />
       </linearGradient>
     </defs>
@@ -99,15 +129,15 @@ const HeartWithWings = ({ className }: { className?: string }) => (
 
 const Logo = ({ showText = true, showTagline = false, size = 'md', className = '' }: LogoProps) => {
   const sizes = {
-    sm: { icon: 'w-16 h-12', text: 'text-xl', tagline: 'text-sm' },
-    md: { icon: 'w-24 h-16', text: 'text-2xl', tagline: 'text-base' },
-    lg: { icon: 'w-32 h-24', text: 'text-3xl', tagline: 'text-lg' },
-    xl: { icon: 'w-44 h-32', text: 'text-4xl md:text-5xl', tagline: 'text-lg' },
+    sm: { icon: 'w-20 h-12', text: 'text-xl', tagline: 'text-sm' },
+    md: { icon: 'w-28 h-16', text: 'text-2xl', tagline: 'text-base' },
+    lg: { icon: 'w-36 h-24', text: 'text-3xl', tagline: 'text-lg' },
+    xl: { icon: 'w-48 h-32', text: 'text-4xl md:text-5xl', tagline: 'text-lg' },
   };
 
   return (
     <div className={`flex flex-col items-center justify-center gap-1 ${className}`}>
-      <div className="animate-lift">
+      <div>
         <HeartWithWings className={sizes[size].icon} />
       </div>
       {showText && (
