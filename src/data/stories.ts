@@ -5,10 +5,7 @@ export type MoodType =
   | 'hopeless' 
   | 'angry' 
   | 'lonely' 
-  | 'okay' 
-  | 'motivated' 
-  | 'grateful' 
-  | 'joyful';
+  | 'okay';
 
 export interface Mood {
   id: MoodType;
@@ -25,16 +22,13 @@ export interface Story {
 }
 
 export const moods: Mood[] = [
-  { id: 'sad', emoji: '😢', label: 'Sad', color: 'bg-misty-blue' },
-  { id: 'anxious', emoji: '😰', label: 'Anxious', color: 'bg-soft-lilac' },
-  { id: 'tired', emoji: '😴', label: 'Tired', color: 'bg-warm-peach' },
-  { id: 'hopeless', emoji: '💔', label: 'Hopeless', color: 'bg-blush-pink' },
-  { id: 'angry', emoji: '😡', label: 'Angry', color: 'bg-warm-peach' },
-  { id: 'lonely', emoji: '🥺', label: 'Lonely', color: 'bg-soft-lilac' },
-  { id: 'okay', emoji: '🙂', label: 'Okay', color: 'bg-misty-blue' },
-  { id: 'motivated', emoji: '💪', label: 'Motivated', color: 'bg-golden-glow/50' },
-  { id: 'grateful', emoji: '🙏', label: 'Grateful', color: 'bg-blush-pink' },
-  { id: 'joyful', emoji: '😄', label: 'Joyful', color: 'bg-golden-glow/50' },
+  { id: 'sad', emoji: '😢', label: 'Sad', color: 'bg-baby-blue' },
+  { id: 'anxious', emoji: '😰', label: 'Anxious', color: 'bg-lavender' },
+  { id: 'tired', emoji: '😴', label: 'Tired', color: 'bg-soft-purple' },
+  { id: 'hopeless', emoji: '💔', label: 'Hopeless', color: 'bg-light-purple' },
+  { id: 'angry', emoji: '😡', label: 'Angry', color: 'bg-soft-purple' },
+  { id: 'lonely', emoji: '🥺', label: 'Lonely', color: 'bg-lavender' },
+  { id: 'okay', emoji: '🙂', label: 'Okay', color: 'bg-baby-blue' },
 ];
 
 export const stories: Story[] = [
@@ -200,84 +194,6 @@ Their light isn't dramatic, but it's reliable. It's there when you need it.
 
 Being okay means you're still here, still glowing. And that quiet, steady light? It's more powerful than you think. 🕯️`,
     mood: 'okay',
-  },
-
-  // Motivated stories
-  {
-    id: 'motivated-1',
-    title: 'The Little Engine',
-    content: `A small engine was asked to climb a mountain that had defeated much bigger trains.
-
-"Why me?" it asked. "I'm so small."
-
-"Because," said the conductor, "big trains rely on their size. But you — you rely on your heart."
-
-And up the mountain it went, one chug at a time.
-
-Your size doesn't matter. Your spirit does. Keep climbing. You're unstoppable. 🚂`,
-    mood: 'motivated',
-  },
-  {
-    id: 'motivated-2',
-    title: 'The Arrow\'s Lesson',
-    content: `An arrow once complained about being pulled backward. "This feels wrong," it said. "I should be flying forward."
-
-The archer whispered, "I'm pulling you back so you can fly farther than ever before."
-
-Every setback is a setup for a greater launch. Trust the tension. Your breakthrough is coming. 🎯`,
-    mood: 'motivated',
-  },
-
-  // Grateful stories
-  {
-    id: 'grateful-1',
-    title: 'The Grateful Stone',
-    content: `A stone sat by a river for a thousand years. One day, a traveler stopped to rest beside it.
-
-"You must be bored," said the traveler. "You've been here so long."
-
-The stone replied, "Bored? I've watched a million sunrises. I've felt the river sing. I've seen children grow into grandparents. I am the richest being alive."
-
-Gratitude doesn't need grand things. It finds treasure in the ordinary. 🌅`,
-    mood: 'grateful',
-  },
-  {
-    id: 'grateful-2',
-    title: 'The Thank You Tree',
-    content: `There was once a tree that dropped a single leaf every time someone said "thank you" beneath its branches.
-
-Over the years, the ground beneath it became the softest, most fertile soil in the land — and new trees grew from it.
-
-Your gratitude creates ripples. Every thank you plants a seed. Keep spreading that energy. 🌳`,
-    mood: 'grateful',
-  },
-
-  // Joyful stories
-  {
-    id: 'joyful-1',
-    title: 'The Dancing Sunbeam',
-    content: `A sunbeam once asked the sun, "What is my purpose?"
-
-The sun replied, "To dance. To play. To make shadows into art and dust into glitter."
-
-"That's it?" asked the sunbeam.
-
-"That's everything," said the sun.
-
-Joy doesn't need a reason. It is the reason. Dance in your light. Celebrate being alive. ☀️`,
-    mood: 'joyful',
-  },
-  {
-    id: 'joyful-2',
-    title: 'The Laughing Brook',
-    content: `A brook giggled its way down the mountain, bubbling over rocks and splashing at the edges.
-
-"Why are you always so happy?" asked a tired hiker.
-
-"Because," said the brook, "I know where I'm going, and I'm enjoying every twist and turn on the way there."
-
-Joy isn't about the destination. It's about loving the journey. Keep laughing, keep flowing, keep shining. 💫`,
-    mood: 'joyful',
   },
 ];
 

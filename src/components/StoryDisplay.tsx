@@ -55,7 +55,7 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
     <div className="animate-fade-in space-y-6 w-full max-w-2xl mx-auto">
       <div className="text-center space-y-2">
         <span className="text-5xl">{currentMood?.emoji}</span>
-        <p className="text-muted-foreground font-nunito">
+        <p className="text-purple-600">
           A story for when you're feeling {currentMood?.label.toLowerCase()}, {userName}
         </p>
       </div>
@@ -64,16 +64,16 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
         className={`
           p-6 md:p-8 
           ${currentMood?.color} 
-          border-2 border-blush-pink/30
+          border-2 border-purple-200
           shadow-soft-lg
           transition-all duration-300
           ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}
         `}
       >
-        <h3 className="text-xl md:text-2xl font-nunito font-semibold text-foreground mb-4">
+        <h3 className="text-xl md:text-2xl font-semibold text-purple-800 mb-4">
           {story.title}
         </h3>
-        <div className="text-foreground/80 leading-relaxed whitespace-pre-line text-base md:text-lg font-nunito">
+        <div className="text-purple-700/90 leading-relaxed whitespace-pre-line text-base md:text-lg">
           {story.content}
         </div>
       </Card>
@@ -85,12 +85,11 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
           variant="outline"
           className={`
             rounded-full px-6 py-3 h-auto
-            border-2 border-blush-pink
-            bg-blush-pink/50 hover:bg-blush-pink
-            text-foreground
-            font-nunito font-medium
+            border-2 border-purple-300
+            bg-white/50 hover:bg-purple-100
+            text-purple-700
             transition-all duration-300
-            ${isStorySaved ? 'opacity-70' : 'hover:scale-105 hover:shadow-glow'}
+            ${isStorySaved ? 'opacity-70' : 'hover:scale-105'}
           `}
         >
           <Heart 
@@ -104,12 +103,10 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
           variant="outline"
           className="
             rounded-full px-6 py-3 h-auto
-            border-2 border-misty-blue
-            bg-misty-blue/50 hover:bg-misty-blue
-            text-foreground
-            font-nunito font-medium
+            border-2 border-purple-300
+            bg-white/50 hover:bg-purple-100
+            text-purple-700
             hover:scale-105
-            hover:shadow-glow
             transition-all duration-300
           "
         >
@@ -122,12 +119,10 @@ const StoryDisplay = ({ mood, userName, onPickAnotherMood }: StoryDisplayProps) 
           variant="outline"
           className="
             rounded-full px-6 py-3 h-auto
-            border-2 border-soft-lilac
-            bg-soft-lilac/50 hover:bg-soft-lilac
-            text-foreground
-            font-nunito font-medium
+            border-2 border-purple-300
+            bg-white/50 hover:bg-purple-100
+            text-purple-700
             hover:scale-105
-            hover:shadow-glow
             transition-all duration-300
           "
         >
